@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rose Lady Wings - Fashion with Grace & Wings</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #e8a3a3; /* Soft pink */
+            --secondary-color: #d4af37; /* Rose gold */
+            --accent-color: #f8e1e1; /* Lighter pink */
+            --text-color: #333;
+            --white: #fff;
+            --light-gray: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h1, h2, h3 {
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin: 10px 5px;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--secondary-color);
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--white) 100%);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            margin-bottom: 15px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        .hero-description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .phone-mockup {
+            max-width: 300px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .phone-mockup img {
+            width: 100%;
+            display: block;
+        }
+        
+        .app-screen {
+            position: absolute;
+            top: 5%;
+            left: 6.5%;
+            width: 87%;
+            height: 90%;
+            background-color: var(--light-gray);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+        
+        .app-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--light-gray);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            text-align: center;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
+            opacity: 0.3;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 80%;
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Rose <span>Lady</span> Wings</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Rose Lady Wings</h1>
+            <p class="tagline">Fashion with Grace & Wings</p>
+            <p class="hero-description">
+                Discover your perfect style with our curated collection of elegant women's clothing. 
+                Rose Lady Wings makes shopping effortless, bringing you the latest trends with just a tap.
+            </p>
+            
+            <div class="download-buttons">
+                <a href="#" class="btn btn-primary" id="ios-btn">
+                    <i class="icon">📱</i> Download for iOS
+                </a>
+                <a href="#" class="btn btn-secondary" id="android-btn">
+                    <i class="icon">📱</i> Download for Android
+                </a>
+            </div>
+            
+            <div class="phone-mockup">
+                <div class="app-screen">
+                    <!-- This would be an image of the app interface -->
+                    <div style="width:100%;height:100%;background:linear-gradient(45deg, #f8e1e1, #e8a3a3);display:flex;justify-content:center;align-items:center;color:white;font-size:1.5rem;">
+                        App Screenshot
+                    </div>
+                </div>
+                <!-- This is a placeholder for the phone frame -->
+                <div style="width:100%;height:100%;background:transparent;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Rose Lady Wings</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👗</div>
+                    <h3>Curated Styles</h3>
+                    <p>Handpicked collections from top designers tailored for your unique taste and body type.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Free Shipping</h3>
+                    <p>Enjoy free shipping on all orders over $50 with delivery tracking and easy returns.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💎</div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest fabrics and craftsmanship that lasts beyond seasonal trends.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>24/7 Support</h3>
+                    <p>Our fashion consultants are always available to help you find your perfect look.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Rose Lady Wings has transformed my wardrobe! The personalized recommendations are spot on, and the quality exceeds my expectations every time. I feel confident and beautiful in every piece."
+                    </div>
+                    <div class="testimonial-author">- Sarah J., New York</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "As a busy mom, I don't have time to shop. This app makes it so easy to find stylish, comfortable clothes that work for my lifestyle. The free shipping and returns are a lifesaver!"
+                    </div>
+                    <div class="testimonial-author">- Michelle T., Chicago</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+                <a href="#">About</a>
+            </div>
+            <p class="copyright">© 2023 Rose Lady Wings. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple button interaction
+        document.getElementById('ios-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to the App Store...');
+            // In a real implementation, this would link to the actual app store page
+        });
+        
+        document.getElementById('android-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecting to Google Play Store...');
+            // In a real implementation, this would link to the actual play store page
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
